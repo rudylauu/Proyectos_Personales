@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using MiPaginaPresentacion.clases; // creo esto para que se pueda utiliza y unir con el comentario.cs
+using Entidades;// lo agrego despues de crear la referencia
+ 
 
 namespace MiPaginaPresentacion.MasInformacion
 {
