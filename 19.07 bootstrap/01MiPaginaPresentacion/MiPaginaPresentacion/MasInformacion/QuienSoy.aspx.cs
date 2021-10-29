@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;// lo agrego despues de crear la referencia
- 
+using Negocio;
 
 namespace MiPaginaPresentacion.MasInformacion
 {
     public partial class QuienSoy : System.Web.UI.Page
     {
-        private List<Comentario> comentarios; //para que acepte esto debo añadir el using MiPaginaPresentacion.clases;
+        private static ComentarioNegocio comentarioNegocio = new ComentarioNegocio();
         public QuienSoy()// escribo "ctor" --> TAB -->TAB; para crear el contructor y escribir mi lista
         {
             // por la lista solo puedo agregar objetos del tipo comentario 
@@ -19,17 +19,19 @@ namespace MiPaginaPresentacion.MasInformacion
 
         protected void Page_Load(object sender, EventArgs e)
         {//el ViewState sirve para manterner los comentarios y no reemplazarlos con uno nuevo
-         //mientras me mantengo en la misma pagina unicamente   
-            if (ViewState["comentarios"]== null/*nulo*/)
-            {
-                comentarios = new List<Comentario>();
-                ViewState["comentarios"] = comentarios;
-            }
-            else 
-            {
-                comentarios = (List<Comentario>)ViewState["comentarios"];
-            }
-            lstComentarios.DataSource = comentarios;// para que lea la lista de origen
+         //mientras me mantengo en la misma pagina unicamente
+         //
+         //ESTO NO ES NECESARIO YA QUE LO REMPLAZO POR LAS CLASES DE ARQUITECTURA EN CAPAS
+            //if (ViewState["comentarios"]== null/*nulo*/)
+            //{
+            //    comentarios = new List<Comentario>();
+            //    ViewState["comentarios"] = comentarios;
+            //}
+            //else 
+            //{
+            //    comentarios = (List<Comentario>)ViewState["comentarios"];
+            //}
+            lstComentarios.DataSource = comentarioNegocio.ObtenerComentarios();//para que lea la lista de origen
             lstComentarios.DataBind(); // para que lo publique en el html
         }
 
@@ -45,13 +47,14 @@ namespace MiPaginaPresentacion.MasInformacion
                 Texto = comentario
             };
             // con esto lo agrego a la lista  de comentarios que esta arriba
-            comentarios.Add(nuevocomentario);
+            bool resultado = comentarioNegocio.GuardarComentarios(nuevocomentario);
             // esto es para vaciar los cuadros
             txtNombre.Text = "";
             txtComentarios.Text = "";
 
             //para imprimir en html
-            lstComentarios.DataBind();
+            lstComentarios.DataSource = comentarioNegocio.ObtenerComentarios();//para que lea la lista de origen
+            lstComentarios.DataBind(); // para que lo publique en el html
         }
     }
 }
