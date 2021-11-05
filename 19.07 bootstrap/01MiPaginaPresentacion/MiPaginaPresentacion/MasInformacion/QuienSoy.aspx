@@ -21,10 +21,11 @@
                     <asp:PlaceHolder runat="server" ID="itemPlaceHolder"></asp:PlaceHolder>
                 </LayoutTemplate>
                 <ItemTemplate> <!--todo lo que se repite-->
-                    <div class="card" style="width: 18rem;">
+                    <div class="card">
                     <div class="card-body">
                         <h5 class="card-title"><%# Eval("Nombre") %></h5><!--Eval() me sirve para llamar a los objetos-->
                         <p class="card-text"><%# Eval("Texto") %></p>
+                        <a href="/MasInformacion/BorrarComentario.aspx?id=<%# Eval("Id") %>" class="btn btn-danger" >Borrar</a>
                     </div>
                     </div>
                 </ItemTemplate>

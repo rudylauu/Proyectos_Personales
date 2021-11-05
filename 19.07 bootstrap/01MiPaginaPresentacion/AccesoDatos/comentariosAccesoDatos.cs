@@ -88,5 +88,26 @@ namespace AccesoDatos
 
             return resultado; 
         }
+        public bool BorrarComentario(int id)
+        {
+            string consulta = $@"DELETE FROM Comentarios
+                                WHERE Id={id}";
+
+            int resultado;
+            using (SqlConnection conexion = new SqlConnection(cadena))
+            {
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                resultado = comando.ExecuteNonQuery();
+            }
+            if (resultado == 1)//para verificar que se haya ingresado en la BD
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
