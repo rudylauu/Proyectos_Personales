@@ -30,5 +30,9 @@ namespace Negocio
         {
             return comentariosDatos.ObtenerComentarios();
         }
+        public bool BorrarComentario(int id)
+        {
+            return comentariosDatos.BorrarComentario(id);
+        }
     }
 }

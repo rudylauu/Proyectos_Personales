@@ -109,5 +109,27 @@ namespace AccesoDatos
                 return false;
             }
         }
+        public bool ModificarComentario(Comentario comentario)
+        {
+            string consulta = $@"UPDATE Comentarios 
+                                SET Nombre='{comentario.Nombre}','{comentario.Texto}',
+                                WHERE Id={id}";
+
+            int resultado;
+            using (SqlConnection conexion = new SqlConnection(cadena))
+            {
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                conexion.Open();
+                resultado = comando.ExecuteNonQuery();
+            }
+            if (resultado == 1)//para verificar que se haya ingresado en la BD
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
