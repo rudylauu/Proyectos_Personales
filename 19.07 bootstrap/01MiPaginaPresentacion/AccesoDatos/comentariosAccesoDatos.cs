@@ -113,7 +113,7 @@ namespace AccesoDatos
         {
             string consulta = $@"UPDATE Comentarios 
                                 SET Nombre='{comentario.Nombre}','{comentario.Texto}',
-                                WHERE Id={id}";
+                                WHERE Id={comentario.id}";
 
             int resultado;
             using (SqlConnection conexion = new SqlConnection(cadena))
@@ -130,6 +130,43 @@ namespace AccesoDatos
             {
                 return false;
             }
+        }
+        // agregarle una pagina nueva en donde muestre la actualizacion que se hizo
+        public Comentario ObtenerComentarios(int id) // 
+        {
+            Comentario resultado = null;
+
+            
+            string consulta = $@"SELECT Id,Nombre,Texto FROM Comentarios
+                               WHERE ID={id}";
+            
+
+            using (SqlConnection conexion = new SqlConnection(cadena))
+            {
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    conexion.Open();
+                    SqlDataReader reader = comando.ExecuteReader();
+
+                    if (reader.Read()) //quito el while y pongo el "if" ya que la condicion es si encuentra 
+                        //un resultado modificar solo ese
+                    {
+                        resultado = new Comentario()
+                        {
+                            Id = reader.GetInt32(0),
+                            
+                            Nombre = reader.GetString(1),
+                            
+                            Texto = reader["Texto"].ToString()
+                        };
+                        
+                    }
+                }
+            }
+            ;
+
+
+            return resultado;
         }
     }
 }
