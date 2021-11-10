@@ -113,7 +113,7 @@ namespace AccesoDatos
         {
             string consulta = $@"UPDATE Comentarios 
                                 SET Nombre='{comentario.Nombre}','{comentario.Texto}',
-                                WHERE Id={comentario.id}";
+                                WHERE Id={comentario.Id}";
 
             int resultado;
             using (SqlConnection conexion = new SqlConnection(cadena))
