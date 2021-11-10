@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace AccesoDatos
         //public List<Comentario> comentarios;
 
         //CON BD
-        private string cadena = "Server=DESKTOP-DTQ8UHN\\SQLEXPRESS;Database=basePresentacion;Trusted_Connection=True;";
+        private string cadena = ConfigurationManager.ConnectionStrings["PaginaPresentacionDB"].ConnectionString;
         
 
         public comentariosAccesoDatos()// agrego un contructor con "ctor" para poder despues agregar y devolver comentarios
@@ -91,7 +92,7 @@ namespace AccesoDatos
         public bool BorrarComentario(int id)
         {
             string consulta = $@"DELETE FROM Comentarios
-                                WHERE Id={id}";
+                                WHERE Id={id}"; 
 
             int resultado;
             using (SqlConnection conexion = new SqlConnection(cadena))
