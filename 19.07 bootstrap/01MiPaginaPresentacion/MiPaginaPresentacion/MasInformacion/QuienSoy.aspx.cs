@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;// lo agrego despues de crear la referencia
+using Entidades.Exceptions;
 using Negocio;
 
 namespace MiPaginaPresentacion.MasInformacion
@@ -22,17 +23,30 @@ namespace MiPaginaPresentacion.MasInformacion
          //mientras me mantengo en la misma pagina unicamente
          //
          //ESTO NO ES NECESARIO YA QUE LO REMPLAZO POR LAS CLASES DE ARQUITECTURA EN CAPAS
-            //if (ViewState["comentarios"]== null/*nulo*/)
-            //{
-            //    comentarios = new List<Comentario>();
-            //    ViewState["comentarios"] = comentarios;
-            //}
-            //else 
-            //{
-            //    comentarios = (List<Comentario>)ViewState["comentarios"];
-            //}
-            lstComentarios.DataSource = comentarioNegocio.ObtenerComentarios();//para que lea la lista de origen
-            lstComentarios.DataBind(); // para que lo publique en el html
+         //if (ViewState["comentarios"]== null/*nulo*/)
+         //{
+         //    comentarios = new List<Comentario>();
+         //    ViewState["comentarios"] = comentarios;
+         //}
+         //else 
+         //{
+         //    comentarios = (List<Comentario>)ViewState["comentarios"];
+         //
+         //
+
+            //EXCEPCIONES Y TRATAMIENTO DE ERRORES
+            
+            try //intentar correr esto si falla pasa al "catch" que es el que muertra los errores
+            {
+                lstComentarios.DataSource = comentarioNegocio.ObtenerComentarios();//para que lea la lista de origen
+                lstComentarios.DataBind(); // para que lo publique en el html
+            } 
+            catch (CapaDeDatosException ex)//exception es una clase Padre ´por ende atrapa todos los errores
+            {
+                lblError.Text = "Ocurrio un error al solicitar los comentarios. Porfavor intente mas tarde.";
+                pnlError.Visible = true; 
+            }
+            
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
