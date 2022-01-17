@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-10"> <%--medidas de las culumnas--%> 
 
             <div class="row">
 
@@ -18,7 +18,7 @@
                         Me considero una persona resolutiva, proactiva y que trabaja en equipo, en busca de aprendizaje continuo y crecimiento profesional.
                     </p>
                     <%--<a href="MasInformacion/QuienSoy.aspx" class="btn btn-dark">Leer más</a>--%>
-                    <asp:Button runat="server" ID="btnRedirigirQuienSoy" Text="Leer más" Cssclas="btn btn-dark" OnClick="btnRedirigirQuienSoy_Click" />
+                    <asp:Button runat="server" ID="btnRedirigirQuienSoy" Text="Leer más" Cssclass="btn btn-dark" OnClick="btnRedirigirQuienSoy_Click" />
                     </div>
                     <div class="col">
                         <h5>A que me dedico?</h5>
@@ -29,11 +29,9 @@
                 </div>
            
             </div>
-         <div class="col-md-4">
+         <div class="col-md-2">
             <!--columna -->
-
             <image class="img-fluid" src="imagen/rudy.jpg" />
-
 
         </div>
         </div>

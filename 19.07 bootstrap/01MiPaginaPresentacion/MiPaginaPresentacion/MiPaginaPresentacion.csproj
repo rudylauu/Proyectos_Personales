@@ -78,6 +78,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="imagen\myAvatar.png" />
+    <Content Include="imagen\Rudy.jpg" />
     <Content Include="MasInformacion\BorrarComentario.aspx" />
     <Content Include="MasInformacion\Ocupacion\Default.aspx" />
     <Content Include="MasInformacion\QuienSoy.aspx" />
