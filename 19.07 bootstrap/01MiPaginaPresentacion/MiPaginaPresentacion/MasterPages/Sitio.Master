@@ -18,7 +18,7 @@
     <!--<script src="../Scripts/bootstrap.bundle.min.js"></script>-->
     <script src="<%=Page.ResolveUrl("~/Scripts/bootstrap.bundle.min.js") %>"></script>
 </head>
-<body>
+<body class="p-3 mb-2 bg-info text-white">
     <form id="form1" runat="server">
          <nav class="navbar navbar-expand-lg navbar-light bg-light">
              <!--ESTO ES UN LINK DE TIPO SERVIDOR -->
