@@ -34,7 +34,7 @@ namespace While_DoWhile_For_Swicth
             Console.ReadKey();*/
 
             /**************************************************************************/
-            
+
             // 3. Imprimir los números del 10 al 1 uno abajo del otro.
 
             /*int n = 10;
@@ -59,6 +59,31 @@ namespace While_DoWhile_For_Swicth
                 n++;
             }*/
 
+            /**************************************************************************/
+
+            //5. Imprimir los números del 1 al 30 sin imprimir números entre el 10 y el 20 uno abajo del otro.
+            /*int n = 1;
+            while (n <= 30)
+            {
+                if ((n <= 10) || (n >= 20))
+                {
+                    Console.WriteLine(n);
+                }
+                n++;
+            }*/
+
+            /**************************************************************************/
+
+            //6. Imprimir la suma de los números del 1 al 10.
+
+            int n= 1, suma=0;
+
+            while (n <= 10)
+            {
+                suma += n;
+                n++;
+            }
+            Console.WriteLine("La suma del 1 al 10 es igual a: " + suma);
             Console.ReadKey();
         }
     }
