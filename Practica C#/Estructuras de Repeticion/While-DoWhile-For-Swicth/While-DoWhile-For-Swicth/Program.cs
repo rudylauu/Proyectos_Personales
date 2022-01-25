@@ -76,14 +76,47 @@ namespace While_DoWhile_For_Swicth
 
             //6. Imprimir la suma de los números del 1 al 10.
 
-            int n= 1, suma=0;
+            /*int n= 1, suma=0;
 
             while (n <= 10)
             {
                 suma += n;
                 n++;
             }
-            Console.WriteLine("La suma del 1 al 10 es igual a: " + suma);
+            Console.WriteLine("La suma del 1 al 10 es igual a: " + suma);*/
+
+            /**************************************************************************/
+
+            //7. Imprimir la suma de los números pares del 1 al 25
+
+            /*int n = 1;
+            int suma = 0;
+            while(n <= 25)
+            {
+                if(n % 2 == 0)
+                {
+                    suma += n;//equivale a suma = suma + n
+
+                }
+                n++;
+            }
+            Console.WriteLine("la suma de los pares es: " + suma);
+            */
+
+            // 8. Imprimir la multiplicación de los números impares que se encuentran entre - 10 y 10.
+
+            int n = -10;
+            int multi = 1;
+            while (n <= 10) 
+            {
+                if (n % 2 != 0)
+                {
+                    multi *= n;
+                }
+                n++;
+            }
+            Console.WriteLine("la multiplicacion de los impares del -10 a: " + multi);
+            
             Console.ReadKey();
         }
     }
