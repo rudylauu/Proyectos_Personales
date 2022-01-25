@@ -105,7 +105,7 @@ namespace While_DoWhile_For_Swicth
 
             // 8. Imprimir la multiplicación de los números impares que se encuentran entre - 10 y 10.
 
-            int n = -10;
+            /*int n = -10;
             int multi = 1;
             while (n <= 10) 
             {
@@ -115,9 +115,40 @@ namespace While_DoWhile_For_Swicth
                 }
                 n++;
             }
-            Console.WriteLine("la multiplicacion de los impares del -10 a: " + multi);
-            
-            Console.ReadKey();
+            Console.WriteLine("la multiplicacion de los impares del -10 a: " + multi);*/
+
+
+            //****ESTRUCTURA FOR*****/
+
+            //1.Imprimir la suma de los números impares del 1 al 10.
+
+            /*int suma = 0;
+             * for (declaracion; condicion; parametro)
+            for(int n = 1; n <= 10; n++)
+            {
+                if (n % 2 == 1)
+                {
+                    suma += n;
+                }
+                
+            }
+            Console.WriteLine("la suma de los impares es: " + suma);
+            */
+            /******************************************************************************/
+
+            /*2. Mostrar la resta de la multiplicación de los números
+            del 1 al 5 con la suma de los números del 1 al 5.
+            Por ejemplo, sería(1 * 2 * 3 * 4 * 5) - (1 + 2 + 3 + 4 + 5)*/
+
+            /*int multi = 1, suma = 0;
+
+            for(int n = 1; n <= 5; n++)
+            {
+                multi *= n;
+                suma += n;
+            }
+            Console.WriteLine("La resta entre la multiplicacion y la suma de los numeros/n del 1 al 5 es: "+ (multi - suma));
+            Console.ReadKey();*/
         }
     }
 }
