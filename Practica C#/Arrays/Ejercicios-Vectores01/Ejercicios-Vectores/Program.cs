@@ -70,14 +70,40 @@ namespace Ejercicios_Vectores
             Se pide:
             1. Informar la inflación anual
             2. Informar la inflación más baja, junto con el 
-            número de mes. Por ejemplo: Mes 2 = 0.1
+            número de mes. Por ejemplo: Mes de Febrero = 0.1
             3. Informar la inflación más alta, junto con el 
-            número de mes. Por ejemplo: Mes 12 = 0.9
+            número de mes. Por ejemplo: Mes de Diciembre = 0.9
             4. Informar el promedio de inflación (inflación 
             total / 2)
              */
 
-             
+            double[] inflacion = {0.8,0.1, 0.3, 0.4, 0.3,0.6, 0.5, 0.3, 0.7, 0.3, 0.2, 0.9 };
+            string[] mes = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Nobiembre", "Diciembre" };
+            double suma=0;
+            double minimo = inflacion[0], maximo = inflacion[0];
+            int n; 
+            string mesMinimo = "", mesMaximo = "";
+
+            for (n = 0; n < inflacion.Length; n++)
+            {
+                suma += inflacion[n]; // suma = suma + inflacion[n]
+                if (inflacion[n]<= minimo)
+                {
+                    minimo = inflacion[n];
+                    mesMinimo = mes[n];
+                }
+
+                if(inflacion[n]>= maximo)
+                {
+                    maximo = inflacion[n];
+                    mesMaximo = mes[n]; 
+                }
+                
+            }
+            Console.WriteLine("La mínima inflacion es de: " + minimo + " En el mes de: " + mesMinimo);
+            Console.WriteLine("La máxima inflacion es de: " + maximo + " En el mes de: " + mesMaximo);
+            Console.WriteLine("La inflación total en el año es de: " + suma);
+            Console.ReadKey();
         }
     }
 }
