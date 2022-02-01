@@ -1,1 +1,4 @@
-en este repo, estan mis proyectos personales
+Bienvenidos, en este repositorio encontraran:
+
+-Practicas de logica
+-Proyectos personales
