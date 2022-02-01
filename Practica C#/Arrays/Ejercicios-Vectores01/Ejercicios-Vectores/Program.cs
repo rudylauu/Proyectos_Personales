@@ -103,6 +103,7 @@ namespace Ejercicios_Vectores
             Console.WriteLine("La mínima inflacion es de: " + minimo + " En el mes de: " + mesMinimo);
             Console.WriteLine("La máxima inflacion es de: " + maximo + " En el mes de: " + mesMaximo);
             Console.WriteLine("La inflación total en el año es de: " + suma);
+            Console.WriteLine("el promedio de inflacion en el año es de: " + suma / 12);
             Console.ReadKey();
         }
     }
