@@ -1,0 +1,1 @@
+Create Table dbo.Genero (ID int, Nombre NVARCHAR(50), Imagen IMAGE, Peliculas_Series NVARCHAR(MAX))
