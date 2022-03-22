@@ -61,9 +61,10 @@ namespace Ejercicios_Vectores
             Console.WriteLine("La cantidad de veces que se repite el 20 es: "+ contador);
             Console.ReadKey();*/
 
+
             //EJERCICIO 2
             /*Dado el vector inflación {0.8, 0.1, 0.3, 0.4, 0.3, 
-            0.6, 0.5, 0.3, 0.7, 0.3, 0.2, 0.9}
+            0.6, 0.5, 0.3, 0.7, 0 .3, 0.2, 0.9}
             Cada ítem del vector representa la inflación de un mes, de tal manera que el primer ítem
             del vector, que es 0.8, representa la inflación de Enero y el último ítem del vector, 
             que es 0.9, representa la inflación de diciembre.
@@ -77,7 +78,7 @@ namespace Ejercicios_Vectores
             total / 2)
              */
 
-            double[] inflacion = {0.8,0.1, 0.3, 0.4, 0.3,0.6, 0.5, 0.3, 0.7, 0.3, 0.2, 0.9 };
+            /*double[] inflacion = {0.8,0.1, 0.3, 0.4, 0.3,0.6, 0.5, 0.3, 0.7, 0.3, 0.2, 0.9 };
             string[] mes = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Nobiembre", "Diciembre" };
             double suma=0;
             double minimo = inflacion[0], maximo = inflacion[0];
@@ -105,6 +106,26 @@ namespace Ejercicios_Vectores
             Console.WriteLine("La inflación total en el año es de: " + suma);
             Console.WriteLine("el promedio de inflacion en el año es de: " + suma / 12);
             Console.ReadKey();
-        }
+            */
+
+            /*
+             * EJERCICIO PRACTICA 3
+             * Copiar el contenido del vector origen al vector destino 
+            utilizando estructura de control de flujo repetitiva, y 
+            luego informar el índice y los valores del nuevo vector.*/
+            char[] vocales = { 'a', 'e', 'i', 'o', 'u' };
+            char[] destino = new char[vocales.Length];
+            for (int n = 0; n < vocales.Length; n++)
+            {
+                Console.WriteLine("Indice: " + n + " valor: " + vocales[n]);
+                destino[n] = vocales[vocales.Length - n - 1];
+            }
+            Console.WriteLine("AHORA SE MOSTRARA EN OTRO ORDEN");
+            for (int n = 0; n < vocales.Length; n++)
+            {
+                Console.WriteLine("Indice: " + n + " valor: " + destino[n]);
+            }
+            Console.ReadKey();
+        } 
     }
 }
